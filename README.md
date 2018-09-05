@@ -1,4 +1,4 @@
-# A Java Maven To Do List Web App using Spring Boot and MySQL
+# A Java Maven ToDo Web App using Spring Boot and MySQL
 
 A simple Todo list application using Spring Boot with the following options:
 - Spring JPA and MySQL for data persistence
