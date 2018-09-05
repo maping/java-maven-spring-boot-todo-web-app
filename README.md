@@ -1,7 +1,6 @@
-# Sample To Do List web application using Spring Boot and MySQL
+# A Java Maven To Do List Web App using Spring Boot and MySQL
 
 A simple Todo list application using Spring Boot with the following options:
-
 - Spring JPA and MySQL for data persistence
 - Thymeleaf templae for the rendering.
 
