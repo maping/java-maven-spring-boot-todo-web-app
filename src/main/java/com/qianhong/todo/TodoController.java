@@ -33,11 +33,12 @@ public class TodoController {
 
     @RequestMapping("/update")
     public String updateTodo(@ModelAttribute TodoListViewModel requestItems) {
-        for (TodoItem requestItem : requestItems.getTodoList() ) {
-             TodoItem item = new TodoItem(requestItem.getCategory(), requestItem.getName());
-             item.setComplete(requestItem.isComplete());
-             item.setId(requestItem.getId());
-             repository.save(item);
+        for (TodoItem requestItem : requestItems.getTodoList()) {
+            TodoItem item = new TodoItem(requestItem.getCategory(), requestItem.getName());
+            item.setComplete(requestItem.isComplete());
+            item.setId(requestItem.getId());
+            item.setTimeCreated(requestItem.getTimeCreated());
+            repository.save(item);
         }
         return "redirect:/";
     }

@@ -4,23 +4,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 @Entity
 public class TodoItem {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String category;
     private String name;
     private boolean complete;
+    private String timeCreated;
 
-    public TodoItem() {}
+    public TodoItem() {
+    }
 
     public TodoItem(String category, String name) {
         this.category = category;
         this.name = name;
         this.complete = false;
+        this.timeCreated = new SimpleDateFormat("MMMM dd, YYYY").format(Calendar.getInstance().getTime());
     }
 
     @Override
@@ -48,7 +53,7 @@ public class TodoItem {
         return;
     }
 
-     public Long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -60,9 +65,17 @@ public class TodoItem {
     public boolean isComplete() {
         return complete;
     }
-    
+
     public void setComplete(boolean complete) {
         this.complete = complete;
         return;
+    }
+
+    public void setTimeCreated(String timeCreated) {
+        this.timeCreated = timeCreated;
+    }
+
+    public String getTimeCreated() {
+        return timeCreated;
     }
 }
